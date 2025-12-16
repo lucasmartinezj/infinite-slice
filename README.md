@@ -1,6 +1,6 @@
 # 🎮 Infinite Slice
 
-Fruit Ninja-style game built for **InfinitePay**, where you slice the competitors’ card machines while protecting the InfinitePay logo.
+Fruit Ninja-style game built for **InfinitePay** in December 2025, where you slice the competitors’ card machines while protecting the InfinitePay logo.
 
 ## 🎯 How to Play
 
@@ -33,6 +33,10 @@ npx serve .
 python -m http.server 8000
 ```
 
+## 🌐 Live Demo
+
+Deployed on Netlify: https://luminous-gelato-8229fb.netlify.app/
+
 ## 📁 Structure
 
 ```
@@ -61,4 +65,4 @@ infinite-slice/
 
 ## 📝 License
 
-Built for InfinitePay © 2024
+Built for Lucas Martinez © December, 2025
