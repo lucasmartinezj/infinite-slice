@@ -2,8 +2,6 @@
 
 Fruit Ninja-style game built for **InfinitePay**, where you slice the competitors’ card machines while protecting the InfinitePay logo.
 
-![InfinitePay](Design_sem_nome-removebg-preview.png)
-
 ## 🎯 How to Play
 
 1. **Slice** the colorful competitor card machines.
