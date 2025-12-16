@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Infinite Slice | InfinitePay</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Tela de Menu Inicial -->
+    <div id="menu-screen" class="screen active">
+        <div class="glass-panel menu-panel">
+            <div class="logo-container">
+                <!-- Logo InfinitePay -->
+                <div class="infinitepay-logo-small">
+                    <img src="assets/images/02-vertical-branco.png" alt="InfinitePay">
+                </div>
+                
+                <h1 class="game-title">INFINITE<span class="accent">SLICE</span></h1>
+                <p class="game-subtitle">powered by InfinitePay</p>
+            </div>
+            
+            <div class="hologram-decoration"></div>
+            
+            <button class="btn-primary" id="btn-start">
+                <span class="btn-text">INICIAR JOGO</span>
+                <span class="btn-glow"></span>
+            </button>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-label">MELHOR PONTUAÇÃO</span>
+                    <span class="stat-value" id="highscore">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="particles-bg" id="particles-menu"></div>
+    </div>
+
+    <!-- Tela de Jogo -->
+    <div id="game-screen" class="screen">
+        <!-- Canvas Three.js -->
+        <canvas id="game-canvas"></canvas>
+        
+        <!-- HUD -->
+        <div class="hud">
+            <div class="hud-top">
+                <div class="score-container glass-panel">
+                    <span class="label">PONTOS</span>
+                    <span class="value" id="score">0</span>
+                </div>
+                
+                <div class="level-container glass-panel">
+                    <span class="label">NÍVEL</span>
+                    <span class="value" id="level">1</span>
+                </div>
+                
+                <div class="lives-container">
+                    <span class="label">VIDAS</span>
+                    <div class="lives" id="lives"></div>
+                </div>
+                
+                <!-- Aviso InfinitePay AQUI -->
+                <div class="warning-hud glass-panel" id="warning-hud" style="display: none;">
+                    <span class="warning-text">⚠️ NÃO CORTE A INFINITEPAY DO SEU NEGÓCIO!</span>
+                </div>
+                
+                <div class="timer-container glass-panel">
+                    <span class="label">TEMPO</span>
+                    <span class="value" id="timer">30</span>
+                </div>
+                
+                <div class="combo-container glass-panel" id="combo-display">
+                    <span class="combo-text">COMBO</span>
+                    <span class="combo-value" id="combo">0</span>
+                    <div class="combo-bar">
+                        <div class="combo-bar-fill" id="combo-bar"></div>
+                    </div>
+                </div>
+                
+                <div class="boss-hud glass-panel" id="boss-hud" style="display: none;">
+                    <span class="boss-label">BOSS</span>
+                    <span class="boss-health" id="boss-health">0/0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Efeito de Corte Visual -->
+        <canvas id="slash-canvas"></canvas>
+    </div>
+
+    <!-- Tela de Game Over -->
+    <div id="gameover-screen" class="screen">
+        <div class="particles-bg" id="particles-gameover"></div>
+        <div class="glass-panel gameover-panel">
+            <h2 class="gameover-title">MISSÃO<span class="accent">COMPLETA</span></h2>
+            
+            <div class="final-stats">
+                <div class="final-stat">
+                    <span class="final-label">PONTUAÇÃO FINAL</span>
+                    <span class="final-value" id="final-score">0</span>
+                </div>
+                
+                <div class="final-stat">
+                    <span class="final-label">MAIOR COMBO</span>
+                    <span class="final-value" id="max-combo">0</span>
+                </div>
+                
+                <div class="final-stat">
+                    <span class="final-label">CORTES TOTAIS</span>
+                    <span class="final-value" id="total-slices">0</span>
+                </div>
+            </div>
+            
+            <div class="new-record glass-panel" id="new-record" style="display: none;">
+                <span class="record-text">🏆 NOVO RECORDE!</span>
+            </div>
+            
+            <div class="btn-group">
+                <button class="btn-primary" id="btn-restart">
+                    <span class="btn-text">JOGAR NOVAMENTE</span>
+                    <span class="btn-glow"></span>
+                </button>
+                
+                <button class="btn-secondary" id="btn-menu">
+                    <span class="btn-text">MENU PRINCIPAL</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">CARREGANDO...</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/models.js"></script>
+    <script src="js/saber.js"></script>
+    <script src="js/slice.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
